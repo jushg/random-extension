@@ -36,6 +36,18 @@ function getAllStorageSyncData() {
     });
   });
 }
+let color = '#3aa757';
+
+chrome.tabs.onUpdated.addListener(
+  function(tabId, changeInfo, tab) {
+      chrome.tabs.sendMessage( tabId, {
+        message: 'new-tab',
+        url: changeInfo.url,
+        tab: tab
+      })
+  }
+);
+
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({"color": color });
   chrome.storage.sync.set({"addColor": color });
@@ -44,11 +56,16 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.runtime.onMessage.addListener(function(message) {
   switch (message.action) {
-      case "openOptionsPage":
-          openOptionsPage();
-          break;
-      default:
-          break;
+    case "openOptionsPage":
+      openOptionsPage();
+      break;
+    case "openAnimation" :
+      chrome.tabs.create({
+        url: 'animation.html'
+      });
+      break;
+    default:
+        break;
   }
 });
 
