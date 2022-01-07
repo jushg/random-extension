@@ -21,6 +21,7 @@ async function getCurrentTab() {
 let randomButton = document.getElementById("randomButton");
 let addButton = document.getElementById("addButton");
 let activateButton = document.getElementById("activateButton")
+let aboutButton = document.getElementById("aboutButton")
 
 chrome.storage.sync.get("activateColor",({activateColor}) => {
   activateButton.style.backgroundColor = activateColor;
@@ -35,7 +36,7 @@ activateButton.addEventListener("click", async () => {
   loading.style.display = "block";
   errors.textContent = "";
   let page= document. querySelectorAll("body")[0]
-
+  chrome.tabs.reload()
   try {
     const response = await getCurrentTab();
     if(response === null){ throw error;  }
@@ -62,12 +63,17 @@ const links = [
   'https://www.youtube.com/watch?v=yBLdQ1a4-JI',
   'https://hackertyper.net',
   'https://geektyper.com',
-  'https://www.youtube.com/watch?v=Sbk_aKuSWRw'
+  'https://www.youtube.com/watch?v=Sbk_aKuSWRw',
+  'https://slides.com/mafinarkhan/why-i-hate-javascript/fullscreen'
 ]
 
 
 addButton.addEventListener("click", async () => {
   chrome.runtime.sendMessage({"action": "openOptionsPage"});
+})
+
+aboutButton.addEventListener("click", async () => {
+  chrome.runtime.sendMessage({"action": "openAboutPage"});
 })
 
 randomButton.addEventListener("click", async () => {

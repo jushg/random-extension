@@ -23,9 +23,9 @@ chrome.runtime.onMessage.addListener(function(message) {
     case "openOptionsPage":
       openOptionsPage();
       break;
-    case "openAnimation" :
+    case "openAboutPage" :
       chrome.tabs.create({
-        url: 'animation.html'
+        url: 'about.html'
       });
       break;
     default:
