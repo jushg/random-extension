@@ -65,6 +65,7 @@ const links = [
   'https://www.youtube.com/watch?v=Sbk_aKuSWRw'
 ]
 
+
 addButton.addEventListener("click", async () => {
   chrome.runtime.sendMessage({"action": "openOptionsPage"});
 })

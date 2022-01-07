@@ -2,3 +2,46 @@ body {
     min-width:300px;
     background-color: blanchedalmond;
 }
+h3 { 
+    color: #ff4411; 
+    font-size: 36px; 
+    font-family: 'Signika', sans-serif; 
+    padding-bottom: 10px;
+    text-align: center;
+}
+h4 { 
+    font-size: 24px;
+    color: #ff4411; 
+    transition: .5s; 
+    -moz-transition: .5s; 
+    -webkit-transition: .5s; 
+    -o-transition: .5s; 
+}
+input {
+    margin: 20;
+    font-size: 20px;
+    text-align: center;
+    border: transparent;
+    background-color: transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid black;
+}
+.custom-select {
+    position: relative;
+    font-size: 18px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+.select-selected {
+    background-color: transparent;
+}
+.button-for-fun {
+    text-align: center;
+}
+img {
+    display: block;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}

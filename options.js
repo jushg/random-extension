@@ -2,7 +2,7 @@ let page = document.getElementById("buttonDiv");
 let selectedClassName = "current";
 const presetButtonColors = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];
 
-// Reacts to a button click by marking marking the selected button and saving
+// Reacts to a button click by marking the selected button and saving
 // the selection
 function handleButtonClick(event) {
   // Remove styling from the previously selected color
@@ -19,29 +19,25 @@ function handleButtonClick(event) {
   chrome.storage.sync.set({ color });
 }
 
-// Add a button to the page for each supplied color
-function constructOptions(buttonColors) {
-  chrome.storage.sync.get("color", (data) => {
-    let currentColor = data.color;
+const links = [
+  'https://youtu.be/8nHnQQhWQVA',
+  'https://youtu.be/TioINDSHcps',
+  'https://youtu.be/EShUeudtaFg',
+  'https://youtu.be/8CKjNcSUNt8',
+  'https://youtu.be/bfCR0dEDO1A',
+  'https://www.youtube.com/watch?v=_bDnPIBY8HY',
+  'https://www.youtube.com/watch?v=4nqX-a7EceQ',
+  'https://www.youtube.com/watch?v=fVtkAGJvNu8',
+  'https://www.youtube.com/watch?v=rX7XZLcGAxw',
+  'https://www.youtube.com/watch?v=YpfGYcT_tXM',
+  'https://www.buzzfeed.com/daves4/dumbest-internet-posts',
+  'https://nuswhispers.com/home/'
+]
 
-    // For each color we were provided…
-    for (let buttonColor of buttonColors) {
-      // …crate a button with that color…
-      let button = document.createElement("button");
-      button.dataset.color = buttonColor;
-      button.style.backgroundColor = buttonColor;
 
-      // …mark the currently selected color…
-      if (buttonColor === currentColor) {
-        button.classList.add(selectedClassName);
-      }
+let setButton = document.getElementById("submitWebsite")
 
-      // …and register a listener for when that button is clicked
-      button.addEventListener("click", handleButtonClick);
-      page.appendChild(button);
-    }
-  });
-}
-
-// Initialize the page by constructing the color options
-constructOptions(presetButtonColors);
+setButton.addEventListener("click", async () => {
+  var link = links[Math.floor(Math.random()*links.length)];
+  window.open(link, '_blank').focus();
+})

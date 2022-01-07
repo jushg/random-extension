@@ -3,38 +3,31 @@
   <title>The Purnisher</title>
   <head>
     <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="./style.css" />
     <script src='./background.js'></script>
-    <script type="text/Javascript">
-      function getData() {
-        var data = getAllStorageSyncData();
-        alert(data);
-      }
-
-      function alertClick() {
-        var url = document.getElementById("url").value;
-        var opt = document.getElementById("opt").value;
-        chrome.storage.sync.set({ [url] : opt }, function() {
-            if (chrome.runtime.error) {
-                console.log("Runtime error.");
-            }
-            alert("Sync Successfully");
-        });
-}
-      }
-    </script>
+    <script src="./options.js" defer></script>
   </head>
   <body>
-    <h3>Add your restricted websites here.</h3>
-    <input type='text' id='url'>
-    <select name='purnishment' id='opt'>
-      <option value='opt1'>Option1</option>
-      <option value='opt2'>Option2</option>
-      <option value='opt3'>Option3</option>
-      <option value='opt4'>Option4</option>
-    </select>
-    <button type='button' id='set' onclick="alertClick()">Submit</button>
-    <h3>Your registered website is as followed</h3>
-    <button type='button' onClick="getData()">Get data</button>
+    <h3>Add your favourite website here ...</h3>
+    <div style="text-align: center;"><input placeholder='Website URL ...' type='text' id='url'></div>
+    <div style="text-align: center; padding-top: 20px; padding-bottom: 10px;"><select class='custom-select' name='purnishment' id='opt'>
+      <option value='' disabled selected>Select your preference</option>
+      <option value='opt1'>Lock keyboard for 5 mins</option>
+      <option value='opt2'>Lock screen for 5 mins</option>
+      <option value='opt3'>Lock browser for 5 mins</option>
+      <option value='opt4'>TOP SECRET ...</option>
+    </select></div><br>
+    <div class = 'button-for-fun'>
+      <button type='button' id='submitWebsite' 
+      style="background-color: lightslategray;
+             border-width: 1px;
+             border-radius: 5px;
+             font-size: 18px;
+             width: 80px;
+             height: 40px;">
+        Submit
+      </button>
+    </div>
+    <img src='./images/open-mouth.jpeg' style="align-self: center;"></img>
   </body>
-  <script src="options.js"></script>
 </html>
