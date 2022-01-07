@@ -56,6 +56,9 @@ const links = [
   'https://www.youtube.com/watch?v=yBLdQ1a4-JI',
 ]
 
+addButton.addEventListener("click", async () => {
+  chrome.runtime.sendMessage({"action": "openOptionsPage"});
+})
 
 randomButton.addEventListener("click", async () => {
   var link = links[Math.floor(Math.random()*links.length)];
