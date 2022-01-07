@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
+  <title>The Purnisher</title>
   <head>
     <link rel="stylesheet" href="button.css">
+    <script src='./background.js'></script>
+    <script type="text/Javascript">
+      function getData() {
+        var data = getAllStorageSyncData();
+        alert(data);
+      }
+
+      function alertClick() {
+        var url = document.getElementById("url").value;
+        var opt = document.getElementById("opt").value;
+        chrome.storage.sync.set({ [url] : opt }, function() {
+            if (chrome.runtime.error) {
+                console.log("Runtime error.");
+            }
+            alert("Sync Successfully");
+        });
+}
+      }
+    </script>
   </head>
   <body>
-    <div id="buttonDiv">
-    </div>
-    <div>
-      <p>Choose a different background color!</p>
-    </div>
+    <h3>Add your restricted websites here.</h3>
+    <input type='text' id='url'>
+    <select name='purnishment' id='opt'>
+      <option value='opt1'>Option1</option>
+      <option value='opt2'>Option2</option>
+      <option value='opt3'>Option3</option>
+      <option value='opt4'>Option4</option>
+    </select>
+    <button type='button' id='set' onclick="alertClick()">Submit</button>
+    <h3>Your registered website is as followed</h3>
+    <button type='button' onClick="getData()">Get data</button>
   </body>
   <script src="options.js"></script>
 </html>
