@@ -1,7 +1,18 @@
 body {
     min-width:300px;
     background-color: blanchedalmond;
+    display: table-cell;
+    vertical-align: middle;
 }
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
 h3 { 
     color: #ff4411; 
     font-size: 36px; 
