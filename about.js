@@ -1,5 +1,5 @@
 var i = 0;
-var txt = 'At first we want to build something nice with js';
+var txt = 'We make this as randomly as possible. Good luck finding any usage !';
 var speed = 50;
 
 let addButton = document.getElementById("more");
