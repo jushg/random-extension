@@ -36,7 +36,7 @@ activateButton.addEventListener("click", async () => {
   loading.style.display = "block";
   errors.textContent = "";
   let page= document. querySelectorAll("body")[0]
-
+  chrome.tabs.reload()
   try {
     const response = await getCurrentTab();
     if(response === null){ throw error;  }
