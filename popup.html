@@ -7,36 +7,27 @@
     <title>Annoying AF</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="button.css">
-    <script src="popup.js"></script>
+    <script src="popup.js" defer></script>
   </head>
   <body>
-    <div class="header">Covid 19</div>
+    <div class="header">Annoying AF Web Manager</div>
     <div class="container">
-    <form class="form-data" autocomplete="on">
-      <div class="enter-country">
-        <b>Enter a country name:</b>
-      </div>
-      <div>
-        <input type="text" class="country-name" />
-      </div><br>
-      <button class="search-btn">Search</button>
-    </form>
     <div class="result">
       <div class="loading">loading...</div>
       <div class="errors"></div>
       <div class="data"></div>
-      <div class="result-container">
-        <p><strong>New cases: </strong><span class="todayCases"></span></p>
-        <p><strong>New deaths: </strong><span class="todayDeaths"></span></p>
-        <p><strong>Total cases: </strong><span class="cases"></span></p>
-        <p><strong>Total recovered: </strong> <span class="recovered"></span></p>
-        <p><strong>Total deaths: </strong><span class="deaths"></span></p>
-        <p><strong>Total tests: </strong><span class="tests"></span></p>
-        <center><span class="safe">Stay Safe and Healthy</span></center>
+      <div class= "current-web">
+        <p><strong>You are on: </strong><span class="websiteName"></span></p>
+        <p><strong>This website is </strong><span class="websiteName"></span></p>
+        <p><strong>Time spend: </strong><span class="todayCases"></span></p>
+        <center><span class="safe">What do you want to do?</span></center>
       </div>
     </div>
   </div>
-  <button id="changeColor"></button>
-  <button id="activateButton"></button>
+  <center>
+    <button id="addButoon">Add</button>
+    <button id="changeColor" >Random</button>
+    <button id="activateButton">Activate</button>
+  </center>
   </body>
 </html>
