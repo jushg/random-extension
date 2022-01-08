@@ -1,9 +1,9 @@
 # Useless AF Extension
-This project was built under NUS Hackers' Hack & Roll 2022. Also, this project is free of malware and is safe to use.
+This project was built under NUS Hackers' Hack & Roll 2022. 
 
 ### Description
 This Google Chrome Extension will help you relax after long long hackathon.
-We promise it will be one of the best extensions you have ever used.
+Guarantee to be one of the best extensions you have ever used. No trolling, we promise.
 
 ### Installation
 Firstly, make sure you signed in to Google Chrome as the extension feature is only available for signed in users.
@@ -21,6 +21,6 @@ git clone https://github.com/jushg/random-extension.git
 4. Press the puzzle icon on the top left of the browser, and enjoy the extension! It should be fun!
 
 ### About Us
-- Hoang Trong Tan, Y2 Computer Engineering, NUS
-- Vo Quang Hung, Y3 Computer Engineering, NUS
+- [Hoang Trong Tan](https://github.com/jushg), Computer Engineering, NUS
+- [Vo Quang Hung](https://github.com/hungvo0603), Computer Engineering, NUS
 
